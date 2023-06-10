@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   apartmentName = 'Brigade Metropolis';
-  title = '';
+  title = 'adda-demo';
 
   hamburger() {
     let x: any = document.getElementById('myLinks');

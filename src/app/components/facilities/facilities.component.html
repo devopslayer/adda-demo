@@ -1,0 +1,26 @@
+<div class="card-container">
+    <h2>Facilities</h2>
+</div>
+
+<div class="card-container">
+    <input type="hidden" #selection>
+
+    <div class="card-container">
+        <button class="card card-small" tabindex="0" *ngFor="let items of facilities" (click)="selection.value = items.name">
+            <span>{{ items.name }}</span>
+        </button>
+    </div>
+</div>
+
+<!-- Booking -->
+<div class="card-container" *ngFor="let items of facilities" [ngSwitch]="selection.value">
+    <div class="card strip" *ngSwitchCase=items.name style="margin: 0px;">
+        <span style="font-weight: bolder; font-size: 2rem;">{{items.name}}</span>
+        <!-- <form for="book"> -->
+            <span> <label>Date: </label> <input type="date" #date placeholder="Select Date" required></span>
+            <span> <label>From: </label> <input type="time" id="from" #startTime required> </span>
+            <span> <label>To: </label> <input type="time" id="to" #endTime required> </span>
+            <button type="submit" class="card-x-small" (click)="bookFacility(items.name, date.value, startTime.value, endTime.value)" #book for="date">Book</button>
+        <!-- </form> -->
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="toolbar" role="banner">
+  <img width="32" alt="Logo" src="../assets/logo.png">
+  <span>{{ apartmentName }}</span>
+    <div class="spacer"></div>
+
+    <!-- Desktop Version -->
+    <ul class="nav">
+      <li title="Facilities">
+        <a routerLink="facilities" routerLinkActive="active">Facilities</a>
+      </li>
+      <li title="Booking Histories">
+        <a routerLink="histories" routerLinkActive="active">History</a>
+      </li>
+      <li>
+        <a>
+          <img alt="User Logo" src="../assets/userimg.png" width="20">
+          User
+          <!-- <i class="fa fa-caret-down" style="margin-left: 5px;"></i>
+          <i class="fa fa-caret-up" style="margin-left: 5px;"></i> -->
+        </a>
+      </li>
+    </ul>
+
+    <!-- Tablet/Mobile Version -->
+    <div class="topnav">
+      <div id="myLinks">
+        <a routerLink="facilities" routerLinkActive="active">
+          <i class="fa fa-users" style="margin-left: 5px;"></i>
+          Facilities
+        </a>
+        <a routerLink="histories" routerLinkActive="active">
+          <i class="fa fa-history" style="margin-left: 5px;"></i>
+          History
+        </a>
+        <a style="display: flex; align-items: left; justify-content: left; margin-left: -10px;">
+          <!-- <i class="fa fa-user" style="margin-left: 5px;"></i> -->
+          <img alt="User Logo" src="../assets/userimg.png" width="20" style="border-radius: 50%; margin-right: 6px;">
+          User
+        </a>
+      </div>
+      <a href="javascript:void(0);" class="icon" (click)="hamburger()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+</div>
+
+<div class="content" role="main">
+
+  <!-- <h2>Home</h2> -->
+  <router-outlet></router-outlet>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2023. All Right reserved.
+  </footer>
+
+</div>
